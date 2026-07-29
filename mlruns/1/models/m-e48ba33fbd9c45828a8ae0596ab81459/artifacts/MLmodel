@@ -1,0 +1,23 @@
+artifact_path: file:C:/Users/kesha/OneDrive/Desktop/CancerDetectionProject/mlruns/1/models/m-e48ba33fbd9c45828a8ae0596ab81459/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.14.2
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.14.0
+model_id: m-e48ba33fbd9c45828a8ae0596ab81459
+model_size_bytes: 1991702
+model_uuid: m-e48ba33fbd9c45828a8ae0596ab81459
+prompts: null
+run_id: 8bd0eede3b274c9a851c1f5d07e6fd08
+utc_time_created: '2026-07-28 05:20:29.181689'
