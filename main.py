@@ -28,10 +28,12 @@ import mlflow.pyfunc
 
 app = FastAPI()
 
+# model = mlflow.pyfunc.load_model(
+# model_uri="models:/Cancer Detection Model/1"
+# )
 model = mlflow.pyfunc.load_model(
-model_uri="models:/Cancer Detection Model/1"
+    r"mlruns/1/models/m-ff8aabc870aa4b8cbd5fb313a526bd3b/artifacts"
 )
-
 class CancerData(BaseModel):
     radius_mean: float
     texture_mean: float

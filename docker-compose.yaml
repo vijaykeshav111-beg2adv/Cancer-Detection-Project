@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  cancer-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: cancer-backend
+    ports:
+      - "8000:8000"
+    # --- ADD THIS VOLUMES BLOCK ---
+    volumes:
+      - .:/app
+    # ------------------------------
+    networks:
+      - cancer-network
+
+  cancer-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: cancer-frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - cancer-backend
+    networks:
+      - cancer-network
+
+networks:
+  cancer-network:
+    driver: bridge
